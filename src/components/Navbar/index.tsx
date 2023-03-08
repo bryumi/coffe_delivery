@@ -7,11 +7,11 @@ export function Navbar() {
       <img src={logo} alt="" />
       <nav>
         <PlaceUser>
-          <MapPin size={22} />
+          <MapPin size={22} weight="fill" />
           <p>São Paulo, SP</p>
         </PlaceUser>
         <Cart>
-          <ShoppingCart size={22} />
+          <ShoppingCart size={22} weight="fill" />
         </Cart>
       </nav>
     </HeaderContainer>

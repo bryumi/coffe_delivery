@@ -26,7 +26,7 @@ export const Cart = styled.div`
   justify-content: space-evenly;
   align-items: center;
   font-style: 'Roboto', sans-serif;
-  color: ${(props) => props.theme['purple-dark']};
+  color: ${(props) => props.theme['yellow-dark']};
   background-color: ${(props) => props.theme['purple-light']};
 `
 export const PlaceUser = styled.div`
