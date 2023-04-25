@@ -7,6 +7,7 @@ import {
   TextContainer,
   Title,
   Description,
+  Icon,
 } from './styles'
 
 export function Home() {
@@ -24,22 +25,30 @@ export function Home() {
               </p>
             </Title>
             <Description>
-              <span>
-                <ShoppingCart size={22} weight="fill" />
+              <div>
+                <Icon variant="orange">
+                  <ShoppingCart size={22} weight="fill" color="#ffff" />
+                </Icon>
                 <p>Compra simples e segura</p>
-              </span>
-              <span>
-                <Timer size={22} weight="fill" />
+              </div>
+              <div>
+                <Icon variant="yellow">
+                  <Timer size={22} weight="fill" color="#ffff" />
+                </Icon>
                 <p>Entrega rápida e rastreada</p>
-              </span>
-              <span>
-                <Package size={22} weight="fill" />
+              </div>
+              <div>
+                <Icon variant="gray">
+                  <Package size={22} weight="fill" color="#ffff" />
+                </Icon>
                 <p>Embalagem mantém o café intacto</p>
-              </span>
-              <span>
-                <Coffee size={22} weight="fill" />
+              </div>
+              <div>
+                <Icon variant="purple">
+                  <Coffee size={22} weight="fill" color="#ffff" />
+                </Icon>
                 <p>O café chega fresquinho até você</p>
-              </span>
+              </div>
             </Description>
           </TextContainer>
           <img src={coffeeCup} alt="" />
