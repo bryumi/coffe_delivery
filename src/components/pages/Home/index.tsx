@@ -8,7 +8,10 @@ import {
   Title,
   Description,
   Icon,
+  ProductsContainer,
+  CoffeeContainer
 } from './styles'
+import { CoffeeCard } from '../../CoffeeCard'
 
 export function Home() {
   return (
@@ -53,6 +56,16 @@ export function Home() {
           </TextContainer>
           <img src={coffeeCup} alt="" />
         </Intro>
+      
+      <ProductsContainer>
+        <h2>Nossos Cafés</h2>
+        <CoffeeContainer>
+          <CoffeeCard />
+          <CoffeeCard />
+          <CoffeeCard />
+          <CoffeeCard />
+        </CoffeeContainer>
+      </ProductsContainer>
       </HomeContainer>
     </div>
   )

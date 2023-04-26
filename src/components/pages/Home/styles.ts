@@ -11,8 +11,12 @@ const iconVariants = {
   gray: 'base-text',
   purple: 'purple',
 } as const
-export const HomeContainer = styled.main`
+export const HomeContainer = styled.section`
   padding: 2rem 10rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 `
 export const Intro = styled.div`
   width: 100%;
@@ -52,7 +56,7 @@ export const Title = styled.div`
 `
 export const Description = styled.div`
   margin-top: 1.5rem;
-  height: 6rem;
+  height: 5.5rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -77,4 +81,22 @@ export const Icon = styled.span<IconVariantProps>`
   border-radius: 50%;
   background: ${(props) => props.theme[iconVariants[props.variant]]};
   z-index: 0;
+`
+export const ProductsContainer = styled.section`
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+
+  h2 {
+    font-family: 'Fredoka One', cursive;
+    color: ${(props) => props.theme['base-subtitle']};
+    margin-bottom: 1rem;
+  }
+`
+export const CoffeeContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
 `

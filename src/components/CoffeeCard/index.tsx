@@ -12,7 +12,10 @@ export function CoffeeCard() {
     <CardContainer>
       <HeaderCard>
         <img src="../../../public/img/coffees/arabe.svg" alt="" />
+        <span>
+
         <p>Tradicional</p>
+        </span>
       </HeaderCard>
       <TextDescription>
         <strong>Expresso Tradicional</strong>
