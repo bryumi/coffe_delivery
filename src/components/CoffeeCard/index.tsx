@@ -6,6 +6,7 @@ import {
   PriceAndShop,
   AmountQtd,
   Shop,
+  PriceContainer,
 } from './styles'
 export function CoffeeCard() {
   return (
@@ -13,27 +14,34 @@ export function CoffeeCard() {
       <HeaderCard>
         <img src="../../../public/img/coffees/arabe.svg" alt="" />
         <span>
-
-        <p>Tradicional</p>
+          <p>Tradicional</p>
         </span>
       </HeaderCard>
       <TextDescription>
-        <strong>Expresso Tradicional</strong>
+        <h4>
+          <strong>Expresso Tradicional</strong>
+        </h4>
         <p>O tradicional café feito com água e grãos moídos</p>
       </TextDescription>
       <PriceAndShop>
+        <PriceContainer>
+          <span>R$</span>
+          <span>
+            <p>9,90</p>
+          </span>
+        </PriceContainer>
         <AmountQtd>
           <button>
-            <Minus />
+            <Minus size={14} weight="bold" />
           </button>
           <span>0</span>
           <button>
-            <Plus />
+            <Plus size={14} weight="bold" />
           </button>
         </AmountQtd>
         <Shop>
           <button>
-            <ShoppingCart />
+            <ShoppingCart size={22} weight="fill" />
           </button>
         </Shop>
       </PriceAndShop>
