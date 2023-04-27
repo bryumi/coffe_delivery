@@ -1,3 +1,6 @@
 import styled from 'styled-components'
 
-export const FormContainer = styled.section``
+export const CheckoutContainer = styled.main`
+  display: flex;
+  justify-content: space-evenly;
+`
