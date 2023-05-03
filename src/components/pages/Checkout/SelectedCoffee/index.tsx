@@ -1,5 +1,7 @@
+import { FrameCoffeeCheckout } from './FrameCoffeeCheckout'
 import {
   CoffeeCardCheckout,
+  ConfirmButton,
   ContainerShop,
   DeliveryValue,
   Total,
@@ -10,8 +12,8 @@ export function SelectedCoffee() {
   return (
     <ContainerShop>
       <h3>Cafés selecionados</h3>
-
       <CoffeeCardCheckout>
+        <FrameCoffeeCheckout />
         <TotalValue>
           <p>Total de itens</p>
           <span>R$</span>
@@ -24,7 +26,7 @@ export function SelectedCoffee() {
           <p>Total</p>
           <span>R$</span>
         </Total>
-        <button>Confirmar Pedido</button>
+        <ConfirmButton>Confirmar Pedido</ConfirmButton>
       </CoffeeCardCheckout>
     </ContainerShop>
   )

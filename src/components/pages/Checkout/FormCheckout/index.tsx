@@ -9,18 +9,28 @@ import {
   Address,
   AddressInfo,
   BankPay,
+  CEPInput,
+  CityAndState,
+  CityInput,
+  ComplementInput,
+  Container,
   CreditPay,
   FormAddress,
   FormContainer,
   MoneyPay,
+  NeighborhoodInput,
+  NumberAndComp,
+  NumberInput,
   Payment,
   PaymentCards,
   PaymentContainer,
+  StateInput,
+  StreetInput,
 } from './styles'
 
 export function FormCheckout() {
   return (
-    <div>
+    <Container>
       <h3>Complete seu Pedido</h3>
       <FormContainer>
         <AddressInfo>
@@ -31,23 +41,28 @@ export function FormCheckout() {
           <span>Informe o endereço onde deseja receber seu pedido</span>
         </AddressInfo>
         <FormAddress>
-          <input type="number" placeholder="CEP" />
-          <input type="text" placeholder="Rua" />
-          <input type="number" placeholder="Número" />
-          <input type="text" placeholder="Complemento" />
-          <input type="text" placeholder="Bairro" />
-          <input type="text" placeholder="Cidade" />
-          <input type="text" placeholder="UF" />
+          <CEPInput type="number" placeholder="CEP" />
+          <StreetInput type="text" placeholder="Rua" />
+          <NumberAndComp>
+            <NumberInput type="number" placeholder="Número" />
+            <ComplementInput type="text" placeholder="Complemento" />
+          </NumberAndComp>
+
+          <CityAndState>
+            <NeighborhoodInput type="text" placeholder="Bairro" />
+            <CityInput type="text" placeholder="Cidade" />
+            <StateInput type="text" placeholder="UF" />
+          </CityAndState>
         </FormAddress>
       </FormContainer>
       <PaymentContainer>
         <Payment>
+          <CurrencyDollar />
           <span>
-            <CurrencyDollar />
             <p>Pagamento</p>
-          </span>
-          <span>
-            O pagamento é feito na entrega. Escolha a forma que deseja pagar
+            <p>
+              O pagamento é feito na entrega. Escolha a forma que deseja pagar
+            </p>
           </span>
         </Payment>
         <PaymentCards>
@@ -65,6 +80,6 @@ export function FormCheckout() {
           </MoneyPay>
         </PaymentCards>
       </PaymentContainer>
-    </div>
+    </Container>
   )
 }
