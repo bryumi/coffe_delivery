@@ -16,7 +16,10 @@ export const CoffeeCardCheckout = styled.div`
   height: 31rem;
 
   background: ${(props) => props.theme['base-card']};
-  border-radius: 6px;
+  border-top-right-radius: 36px;
+  border-bottom-left-radius: 36px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 6px;
 `
 const BaseTotal = styled.div`
   display: flex;

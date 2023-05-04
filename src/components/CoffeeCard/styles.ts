@@ -40,6 +40,22 @@ export const HeaderCard = styled.div`
     margin-top: -3.5rem;
   }
 `
+export const Price = styled.div`
+  width: 55px;
+  height: 21px;
+
+  display: flex;
+  align-items: center;
+  text-align: right;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 130%;
+  span {
+    margin-left: 0.25rem;
+  }
+`
 export const TextDescription = styled.div`
   display: flex;
   flex-direction: column;

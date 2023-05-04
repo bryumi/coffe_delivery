@@ -15,14 +15,22 @@ export const Frame = styled.section`
     height: 4rem;
   }
 `
-export const FrameInfo = styled.div``
-export const FrameName = styled.div`
-  width: 10.7rem;
-  
+export const FrameInfo = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  padding: 0px;
+  gap: 20px;
+`
+export const FrameName = styled.div`
+  display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 171px;
+  height: 61px;
 
   font-family: 'Roboto';
   font-style: normal;
@@ -36,5 +44,76 @@ export const FrameTrashQtd = styled.div`
   align-items: center;
   flex-direction: row;
 `
-export const FrameQtd = styled.div``
-export const FrameTrash = styled.button``
+
+export const FrameQtd = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem;
+
+  background: ${(props) => props.theme['base-button']};
+  border-radius: 6px;
+
+  width: 4.5rem;
+  height: 2rem;
+
+  span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+  }
+`
+export const FrameTrash = styled.button`
+  box-sizing: border-box;
+  width: 6.25rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  border-radius: 6px;
+  border: none;
+  background: ${(props) => props.theme['base-button']};
+  color: ${(props) => props.theme['purple-dark']};
+  cursor: pointer;
+
+  p {
+    color: ${(props) => props.theme['base-text']};
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+  }
+  :hover {
+    background: ${(props) => props.theme['base-hover']};
+    transition: 0.2s;
+  }
+`
+export const ButtonMinus = styled.button`
+  background-color: transparent;
+  color: ${(props) => props.theme['purple-dark']};
+  cursor: pointer;
+  border: none;
+  :hover {
+    color: ${(props) => props.theme['base-hover']};
+    transition: 0.2s;
+  }
+`
+export const ButtonPlus = styled.button`
+  background-color: transparent;
+  color: ${(props) => props.theme['purple-dark']};
+  cursor: pointer;
+  border: none;
+  :hover {
+    color: ${(props) => props.theme['base-hover']};
+    transition: 0.2s;
+  }
+`

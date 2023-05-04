@@ -1,5 +1,7 @@
 import { Minus, Plus, Trash } from 'phosphor-react'
 import {
+  ButtonMinus,
+  ButtonPlus,
   Frame,
   FrameInfo,
   FrameName,
@@ -7,32 +9,36 @@ import {
   FrameTrash,
   FrameTrashQtd,
 } from './styles'
+import { Price } from '../../../../CoffeeCard/styles'
 
 export function FrameCoffeeCheckout() {
   return (
     <Frame>
-      <img src="../../../../../../public/img/coffees/arabe.svg" alt="" />
       <FrameInfo>
+        <img src="../../../../../../public/img/coffees/arabe.svg" alt="" />
         <FrameName>
           <p>Expresso Tradicional</p>
           <FrameTrashQtd>
             <FrameQtd>
-              <button>
-                <Minus />
-              </button>
+              <ButtonMinus>
+                <Minus size={14} />
+              </ButtonMinus>
               <span>1</span>
-              <button>
-                <Plus />
-              </button>
+              <ButtonPlus>
+                <Plus size={14} />
+              </ButtonPlus>
             </FrameQtd>
             <FrameTrash>
-              <Trash />
+              <Trash size={16} />
               <p>Remover</p>
             </FrameTrash>
           </FrameTrashQtd>
         </FrameName>
       </FrameInfo>
-      <p>R$ 9,90</p>
+      <Price>
+        <p>R$</p>
+        <span>9,90</span>
+      </Price>
     </Frame>
   )
 }
