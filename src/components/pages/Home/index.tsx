@@ -16,7 +16,6 @@ import { CoffeeCard } from '../../CoffeeCard'
 export function Home() {
   return (
     <div>
-      <Navbar />
       <HomeContainer>
         <Intro>
           <TextContainer>

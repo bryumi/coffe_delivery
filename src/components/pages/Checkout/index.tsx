@@ -6,7 +6,6 @@ import { CheckoutContainer } from './styles'
 export function Checkout() {
   return (
     <div>
-      <Navbar />
       <CheckoutContainer>
         <FormCheckout />
         <SelectedCoffee />
