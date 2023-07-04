@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { FrameCoffeeCheckout } from './FrameCoffeeCheckout'
 import {
   CoffeeCardCheckout,
@@ -26,7 +27,9 @@ export function SelectedCoffee() {
           <p>Total</p>
           <span>R$</span>
         </Total>
-        <ConfirmButton>Confirmar Pedido</ConfirmButton>
+        <NavLink to="/success" style={{ textDecoration: 'none' }}>
+          <ConfirmButton>Confirmar Pedido</ConfirmButton>
+        </NavLink>
       </CoffeeCardCheckout>
     </ContainerShop>
   )

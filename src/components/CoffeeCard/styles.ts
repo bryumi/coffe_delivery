@@ -18,10 +18,25 @@ export const CardContainer = styled.div`
 `
 
 export const HeaderCard = styled.div`
-  span {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  img {
+    height: 7.5rem;
+    width: 7.5rem;
+
+    margin-top: -3.5rem;
   }
-  p {
+`
+export const CoffeeTag = styled.span`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  span {
     color: ${(props) => props.theme['yellow-dark']};
     background-color: ${(props) => props.theme['yellow-light']};
     text-align: center;
@@ -30,14 +45,8 @@ export const HeaderCard = styled.div`
     font-weight: 600;
     width: 5.75rem;
     height: 1.5rem;
-
+    padding: 0.125rem;
     border-radius: 8px;
-  }
-  img {
-    height: 7.5rem;
-    width: 7.5rem;
-
-    margin-top: -3.5rem;
   }
 `
 export const Price = styled.div`
@@ -103,26 +112,6 @@ export const PriceContainer = styled.div`
     font-weight: 800;
     line-height: 2rem;
     color: ${(props) => props.theme['base-subtitle']};
-  }
-`
-export const AmountQtd = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  width: 4.5rem;
-  height: 2.375rem;
-  background: ${(props) => props.theme['base-button']};
-  border-radius: 6px;
-
-  button {
-    border: none;
-    background: ${(props) => props.theme['base-button']};
-    color: ${(props) => props.theme.purple};
-  }
-  button:hover {
-    color: ${(props) => props.theme['purple-dark']};
-    transition: 0.2s;
   }
 `
 export const Shop = styled.div`

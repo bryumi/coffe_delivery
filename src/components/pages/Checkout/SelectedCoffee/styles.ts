@@ -68,8 +68,10 @@ export const ConfirmButton = styled.button`
   line-height: 160%;
 
   text-transform: uppercase;
+  text-decoration: none;
   color: ${(props) => props.theme.white};
   :hover {
+    text-decoration: none;
     background-color: ${(props) => props.theme['base-hover']};
     color: ${(props) => props.theme['base-card']};
     transition: 0.3s;

@@ -1,15 +1,13 @@
-import { Minus, Plus, Trash } from 'phosphor-react'
+import { Trash } from 'phosphor-react'
 import {
-  ButtonMinus,
-  ButtonPlus,
   Frame,
   FrameInfo,
   FrameName,
-  FrameQtd,
   FrameTrash,
   FrameTrashQtd,
 } from './styles'
 import { Price } from '../../../../CoffeeCard/styles'
+import { QuantityButton } from '../../../../QuantityButton/QuantityButton'
 
 export function FrameCoffeeCheckout() {
   return (
@@ -19,15 +17,7 @@ export function FrameCoffeeCheckout() {
         <FrameName>
           <p>Expresso Tradicional</p>
           <FrameTrashQtd>
-            <FrameQtd>
-              <ButtonMinus>
-                <Minus size={14} />
-              </ButtonMinus>
-              <span>1</span>
-              <ButtonPlus>
-                <Plus size={14} />
-              </ButtonPlus>
-            </FrameQtd>
+            <QuantityButton />
             <FrameTrash>
               <Trash size={16} />
               <p>Remover</p>

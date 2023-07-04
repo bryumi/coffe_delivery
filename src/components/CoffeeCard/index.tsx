@@ -1,48 +1,70 @@
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { Minus, Plus, ShoppingCart, Tag } from 'phosphor-react'
 import {
   CardContainer,
   HeaderCard,
   TextDescription,
   PriceAndShop,
-  AmountQtd,
   Shop,
   PriceContainer,
+  CoffeeTag,
 } from './styles'
-export function CoffeeCard() {
+import { formatMoney } from '../../utils/formatMoney'
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { QuantityButton } from '../QuantityButton/QuantityButton'
+
+export interface Coffee {
+  id: number
+  tags: string[]
+  name: string
+  description: string
+  photo: string
+  price: number
+}
+interface CoffeeProps {
+  coffee: Coffee
+}
+export function CoffeeCard({ coffee }: CoffeeProps) {
+  const [quantity, setQuantity] = useState(0)
+  function handleIncrease() {
+    setQuantity((state) => state + 1)
+  }
+
+  function handleDecrease() {
+    setQuantity((state) => state - 1)
+  }
+
+  const formatedPrice = formatMoney(coffee.price)
   return (
     <CardContainer>
       <HeaderCard>
-        <img src="../../../public/img/coffees/arabe.svg" alt="" />
-        <span>
-          <p>Tradicional</p>
-        </span>
+        <img src={`${coffee.photo}`} alt="" />
+        <CoffeeTag>
+          {coffee.tags.map((tag) => {
+            return <span key={`${coffee.id} ${tag}`}>{tag}</span>
+          })}
+        </CoffeeTag>
       </HeaderCard>
       <TextDescription>
         <h4>
-          <strong>Expresso Tradicional</strong>
+          <strong>{coffee.name}</strong>
         </h4>
-        <p>O tradicional café feito com água e grãos moídos</p>
+        <p>{coffee.description}</p>
       </TextDescription>
       <PriceAndShop>
         <PriceContainer>
           <span>R$</span>
           <span>
-            <p>9,90</p>
+            <p>{formatedPrice}</p>
           </span>
         </PriceContainer>
-        <AmountQtd>
-          <button>
-            <Minus size={14} weight="bold" />
-          </button>
-          <span>0</span>
-          <button>
-            <Plus size={14} weight="bold" />
-          </button>
-        </AmountQtd>
+        <QuantityButton />
         <Shop>
-          <button>
-            <ShoppingCart size={22} weight="fill" />
-          </button>
+          <NavLink to="/checkout">
+            <button>
+              <ShoppingCart size={22} weight="fill" />
+            </button>
+          </NavLink>
         </Shop>
       </PriceAndShop>
     </CardContainer>

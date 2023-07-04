@@ -19,7 +19,7 @@ export const HomeContainer = styled.section`
   gap: 0.25rem;
 `
 export const Intro = styled.div`
-  width: 100%;
+ // width: 100%;
   height: 34rem;
   display: flex;
   justify-content: space-around;
@@ -95,7 +95,8 @@ export const ProductsContainer = styled.section`
 `
 export const CoffeeContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 32px;
   grid-row-gap: 32px;
