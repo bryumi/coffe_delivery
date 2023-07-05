@@ -12,6 +12,7 @@ import { formatMoney } from '../../utils/formatMoney'
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { QuantityButton } from '../QuantityButton/QuantityButton'
+import { useCart } from '../../hooks/useCart'
 
 export interface Coffee {
   id: number
@@ -33,7 +34,16 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
   function handleDecrease() {
     setQuantity((state) => state - 1)
   }
+  const { addCoffeeToCart } = useCart()
 
+  function handleAddToCart() {
+    const coffeeToAdd = {
+      ...coffee,
+      quantity,
+    }
+
+    addCoffeeToCart(coffeeToAdd)
+  }
   const formatedPrice = formatMoney(coffee.price)
   return (
     <CardContainer>
@@ -58,10 +68,14 @@ export function CoffeeCard({ coffee }: CoffeeProps) {
             <p>{formatedPrice}</p>
           </span>
         </PriceContainer>
-        <QuantityButton />
+        <QuantityButton
+          quantity={quantity}
+          onIncrease={handleIncrease}
+          onDecrease={handleDecrease}
+        />
         <Shop>
           <NavLink to="/checkout">
-            <button>
+            <button onClick={handleAddToCart}>
               <ShoppingCart size={22} weight="fill" />
             </button>
           </NavLink>

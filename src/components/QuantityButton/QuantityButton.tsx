@@ -1,15 +1,25 @@
 import { Minus, Plus } from 'phosphor-react'
 import { ButtonMinus, ButtonPlus, FrameQtd } from './styles'
 
-export function QuantityButton() {
+interface QuantityButtonProps {
+  quantity: number
+  onIncrease: () => void
+  onDecrease: () => void
+}
+
+export function QuantityButton({
+  quantity,
+  onIncrease,
+  onDecrease,
+}: QuantityButtonProps) {
   return (
     <FrameQtd>
-      <ButtonMinus>
-        <Minus size={14} />
+      <ButtonMinus disabled={quantity <= 0} onClick={onDecrease}>
+        <Minus weight="bold" size={14} />
       </ButtonMinus>
-      <span>1</span>
-      <ButtonPlus>
-        <Plus size={14} />
+      <span>{quantity}</span>
+      <ButtonPlus onClick={onIncrease}>
+        <Plus weight="bold" size={14} />
       </ButtonPlus>
     </FrameQtd>
   )
